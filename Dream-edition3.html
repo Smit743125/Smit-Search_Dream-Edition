@@ -1,0 +1,2301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smit_Search-:-Dream_Edition</title>
+<style>
+                                    /* Evey Code of CSS Stands here */
+
+
+.built-by{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: rgba(255,255,255,1);
+}
+
+    .shortcuts button{
+    width: 110px;
+    height: 42px;
+    border-radius: 30px;
+    border: 2px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.08);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.shortcuts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;  
+    justify-content: center;
+    margin-top: 390px;
+}
+    .shortcuts button:hover{
+    transform: translateY(-3px) scale(1.05);
+    background: rgba(255,255,255,0.18);
+    box-shadow: 0 0 15px rgba(255,255,255,0.3);
+
+}
+
+.input {
+        width: 55%;
+        height: 53px;
+        border: 4px solid #ccc;
+        border-radius: 40px;
+        padding-left: 20px;
+        font-size: 16px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: rgb(255, 255, 255);
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        transition: 0.6s;
+}
+
+
+.input::placeholder{
+    color: rgba(255,255,255,1.0);
+}
+
+.input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: 0.6s;
+}
+
+input:hover {
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
+}
+
+
+.SearchBoxContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 350px;
+}
+
+                                    
+/* 
+=================================These are the only thing not working so I replaced them with Digital weather. I'm so sorry... ==================================
+
+.login{
+    position: absolute;
+    top: 15px;
+    right: 160px;
+    width: 80px;
+    height: 40px;
+    background-color: transparent;
+    border: white solid 2px;
+    border-radius: 20px;
+    font-size: 15.1px;
+    font-weight: bold;
+    color: rgb(36, 123, 173);
+    transition: 0.8s;
+}
+
+
+.signup {
+    position: absolute;
+    top: 15px;
+    right: 60px;
+    width: 80px;
+    height: 40px;
+    background-color: white;
+    border: white solid 2px; 
+    border-radius: 20px;
+    font-size: 15.1px;
+    font-weight: bold;
+    color: rgb(29, 23, 23);
+    transition: 0.8s;
+}
+
+
+
+
+.login:hover{
+    box-shadow: 0 0 15px  rgb(255, 255, 255);
+    background-color: white;
+    color: rgb(36, 123, 173);
+    border: white solid 2px;
+    transform: scale(1.05);
+}
+
+
+.signup:hover{
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    background-color: transparent;
+    color: rgb(36, 123, 173);
+    border: white solid 2px;
+    transform: scale(1.05);
+} */
+
+
+
+.DreamEdition{
+
+    margin-left: 40px;
+    margin-top: -370px;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    color: transparent;
+
+    -webkit-text-stroke: 0.5px rgba(255,255,255,1);
+
+}
+
+
+
+.ai{
+
+    width: 100px;
+    height: 40px;
+    position: relative;
+    background: rgba(255,255,255,0.08);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    transition: 0.5s;
+}
+
+
+/* RGB BORDER */
+.ai::before{
+
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 22px;
+
+    background: linear-gradient(
+        90deg,
+        red,
+        orange,
+        yellow,
+        lime,
+        cyan,
+        blue,
+        violet,
+        red
+    );
+
+    background-size: 300%;
+    z-index: -2;
+    animation: rgbMove 4s linear infinite;
+}
+
+
+/* INNER LAYER */
+.ai::after{
+
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 18px;
+    background: rgba(15,15,15,0.85);
+    z-index: -1;
+}
+
+
+.ai-container{
+
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* RGB MOVEMENT */
+@keyframes rgbMove{
+
+    0%{
+        background-position: 0%;
+    }
+    100%{
+        background-position: 300%;
+    }
+}
+
+.ai:hover{
+    transform: scale(1.1);
+}
+
+
+.ai-panel{
+
+    width: 250px;
+    height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    position: absolute;
+
+    bottom: 60px;
+    right: 0;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: white;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+}
+
+
+.ai-panel.open{
+
+    opacity: 1;
+    pointer-events: auto;
+    font-weight: bold;
+}
+
+.chat-area{
+
+    height: 220px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.input-area{
+
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+
+.chat-input{
+
+    flex: 1;
+    height: 40px;
+    border: none;
+    border-radius: 15px;
+    padding-left: 15px;
+    background: rgba(255,255,255,0.08);
+    color: white;
+    outline: none;
+}
+
+
+.send-btn{
+
+    width: 70px;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    cursor: pointer;
+}
+
+
+/*======================= Weather Stuff!!!======================= */
+.weather-box{
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    border-radius: 15px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.1);
+    color: white;
+    font-family: "Exo", sans-serif;
+    border: transparent;
+}
+.city, .condition{
+
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+        body {
+            background: black;
+            /* background:linear-gradient(135deg, #0f2027, #203a43, #2c5364); */
+            font-family: Arial, fallback, sans-serif;
+            margin: 0vh; /* Adjust the top margin to position the content */
+            height: 100vh;
+            background-repeat: no-repeat;  
+            overflow: hidden;
+        
+    }
+
+
+.clock {
+    position: absolute;
+    top: 130px;
+    left: 49.5%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    color: rgba(255,255,255,1);
+    text-shadow: 0 0 5px rgba(255,255,255,0.3);
+    font-size: 70px;
+    transition: 0.8s;
+    transition-timing-function: ease-in-out;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 200;
+    letter-spacing: 8px;
+    font-family: "Exo", sans-serif;
+    font-weight: 300;
+}
+
+
+.clock:hover {
+    text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
+    transform: translateX(-50%) scale(1.2);
+}
+
+.time-status {
+    font-size: 18px;
+    opacity: 0.8;
+    letter-spacing: 3px;
+}
+
+.time-status {
+    position: absolute;
+    top: 262px;
+    left: 49.5%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,1);
+    text-shadow: 0 0 5px rgba(255,255,255,0.3);
+    transition: 0.8s;
+    transition-timing-function: ease-in-out;
+    font-family: "Exo", sans-serif;
+    font-weight: 300;
+}
+
+.time-status:hover {
+    text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
+    transform: translateX(-50%) scale(1.05);
+}
+
+
+
+
+/* ================================================ Background ================================================= */
+
+
+.moon{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: absolute;
+
+    background: radial-gradient(circle at center,
+    #f5f5f5,
+    #d9d9d9,
+    #a6a6a6);
+
+    box-shadow: 0 0 40px rgba(255,255,255,0.8);
+    opacity: 0;
+
+    transition:
+        left 1s linear,
+        top 1s linear,
+        opacity 2s linear;
+}
+
+
+@keyframes moonCycle {
+
+    /* 🌞 hidden during day */
+    0% {
+        left: -10%;
+        top: 80%;
+        opacity: 0;
+    }
+
+    42% {
+        opacity: 0;
+    }
+
+    /* 🌙 moonrise starts EARLIER */
+    45% {
+        left: -10%;
+        top: 80%;
+        opacity: 0;
+    }
+
+    /* 🌌 appears faster */
+    50% {
+        opacity: 1;
+    }
+
+    /* 🌕 reaches peak sooner */
+    60% {
+        left: 50%;
+        top: 5%;
+        opacity: 0.8;
+    }
+
+    /* 🌙 starts leaving earlier */
+    72% {
+         left: 72%;  /*72 */
+        top: 5%;   /*25 */
+        opacity: 0.6;
+    }
+
+    /* 🌌 fading before dawn */
+    80% {
+        left: 100%;  /*88 */
+        top: 42%;   /*55 */
+        opacity: 0.2;
+    }
+
+    /* 🌅 fully gone BEFORE morning */
+    100% {
+        left: 110%;
+        top: 55%;
+        opacity: 0;
+    }
+}
+
+
+
+.sun{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(255, 221, 0, 20);
+    position: absolute;
+    background: radial-gradient(circle at center, #ffdd00, #ff9900);
+
+        /* background:
+        radial-gradient(
+            circle,
+            #FFFBE6 0%,
+            #FFE066 40%,
+            #FFB700 75%,
+            rgba(255,183,0,0) 100%
+        ); */
+    transition:
+        left 1s linear,
+        top 1s linear,
+        opacity 2s linear;
+    filter:blur(1px);
+}
+
+
+
+
+.moon{
+        /* background:
+        radial-gradient(
+            circle at 30% 30%,
+            #FFFFFF,
+            #EAEAEA,
+            #CFCFCF
+        ); */
+    transition:
+        left 1s linear,
+        top 1s linear,
+        opacity 2s linear;
+
+
+}
+@keyframes sunCycle {
+
+    /* 🌅 sunrise */
+    0% {
+        left: -10%;
+        top: 90%;
+        opacity: 0;
+    }
+
+    /* 🌞 appears smoothly */
+    5% {
+        opacity: 1;
+    }
+
+    /* ☀️ reaches center at 12s */
+    20% {
+        left: 50%;
+        top: 5%;
+        opacity: 0.7;
+    }
+
+    /* 🌇 keeps SAME SPEED downward */
+    35% {
+        left: 70%;
+        top: 25%;
+        opacity: 0.5;
+    }
+
+    /* 🌇 near sunset */
+    45% {
+        left: 85%;
+        top: 55%;
+        opacity: 0;
+    }
+    47% {
+        opacity: 0;
+    }
+    /* 🌙 gone before night */
+    50% {
+        opacity: 0;
+        left: 110%;
+        top: 80%;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+/* ================= MORNING - DAY ================= */
+.morning-day{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        #0077FF,
+        #3DAEFF,
+        #BFE9FF
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    transition: opacity 2.5s ease-in-out;
+}
+
+
+
+
+
+
+
+
+@keyframes morningDayTransition {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  20%  { opacity: 1; }
+  30%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* ================= DAY - EVENING ================= */
+.day-evening{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+
+        #69B6FF 0%,
+        #84C7FF 25%,
+        #A6D8FF 50%,
+        #CEE8FF 75%,
+        #F3F1EA 100%
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -3;
+    transition: opacity 2.5s ease-in-out;
+    filter: saturate(1.2);
+}
+
+@keyframes dayEveningTransition {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  20%  { opacity: 1; }
+  30%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* ================= EVENING - NIGHT ================= */
+.evening-night{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        #FF8C42,
+        #D96CFF,
+        #2B1055
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -4;
+    transition: opacity 2.5s ease-in-out;
+}
+
+@keyframes eveningNightTransition {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  20%  { opacity: 1; }
+  30%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* ================= DEEP NIGHT ================= */
+.night-deep{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        #0B1026,
+        #111B3A,
+        #1B2B5A
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -5;
+    transition: opacity 2.5s ease-in-out;
+}
+
+@keyframes nightDeepTransition {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  20%  { opacity: 1; }
+  30%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* ================= NIGHT - MORNING ================= */
+.night-morning{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        #1A2340,
+        #3B4C7A,
+        #F6B27A
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -6;
+    transition: opacity 2.5s ease-in-out;
+}
+
+@keyframes nightMorningTransition {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  20%  { opacity: 1; }
+  30%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.particles{
+
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particle{
+
+    position: absolute;
+
+    width: 4px;
+
+    height: 4px;
+
+    background: rgba(255,255,255,0.7);
+
+    border-radius: 50%;
+
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp{
+
+    from{
+
+        transform: translateY(100vh);
+
+        opacity: 0;
+    }
+
+    to{
+
+        transform: translateY(-10vh);
+
+        opacity: 1;
+    }
+}
+
+/* .day-particles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+}
+
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+
+@keyframes windMove {
+    from {
+        transform: translateX(-10vw);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    to {
+        transform: translateX(110vw);
+        opacity: 0;
+    }
+}
+
+.particle.wind {
+    animation: windMove linear infinite;
+} */
+
+
+
+/* ========================================================================================================================================= */
+
+
+
+
+
+
+
+
+
+.dream-btn{
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50px;
+    border: 2px solid #fff;
+
+    background: transparent;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+    overflow: hidden;
+
+    backdrop-filter: blur(5px);
+
+    z-index: 1;
+    transition: 0.5s;
+}
+
+
+/* RGB BORDER */
+.dream-btn::before{
+
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 50px;
+
+    background: linear-gradient(
+        90deg,
+        #8b5cf6,
+        #a78bfa,
+        #93c5fd,
+        #c4b5fd,
+        #8b5cf6
+    );
+
+    background-size: 300%;
+    z-index: -2;
+    animation: rgbMove2 6s linear infinite;
+}
+
+
+/* INNER LAYER */
+.dream-btn::after{
+
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 50px;
+    background: transparent;
+    z-index: -1;
+}
+
+
+/* RGB MOVEMENT */
+@keyframes rgbMove2{
+
+    0%{
+        background-position: 600%;
+    }
+    100%{
+        background-position: 0%;
+    }
+}
+
+
+.cloud{
+
+    position:absolute;
+
+    width:400px;
+    height:140px;
+
+    top:100px;
+    left:200px;
+
+    filter: blur(20px);
+}
+
+.cloud::before,
+.cloud::after{
+
+    content:"";
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        ellipse at center,
+        rgba(255,255,255,0.85) 0%,
+        rgba(255,255,255,0.45) 50%,
+        rgba(255,255,255,0) 100%
+    );
+}
+
+.cloud::before{
+
+    width:220px;
+    height:140px;
+
+    left:0;
+    top:0;
+}
+
+.cloud::after{
+
+    width:260px;
+    height:160px;
+
+    left:120px;
+    top:-20px;
+}
+
+
+.cloud-part{
+
+    position:absolute;
+
+    width:220px;
+    height:140px;
+
+    left:80px;
+    top:20px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        ellipse at center,
+        rgba(255,255,255,0.8) 0%,
+        rgba(255,255,255,0.4) 50%,
+        rgba(255,255,255,0) 100%
+    );
+}
+
+
+.cloud1{
+
+    top:80px;
+    left:110%;
+    filter: blur(15px);
+
+    animation: cloudMove1 20s linear infinite;
+}
+
+.cloud2{
+
+    top:170px;
+    left:130%;
+
+    transform:scale(0.8);
+    filter: blur(25px);
+
+    animation: cloudMove2 25s linear infinite;
+}
+
+.cloud3{
+
+    top:40px;
+    left:150%;
+
+    transform:scale(1.2);
+    filter: blur(20px); 
+
+    animation: cloudMove3 30s linear infinite;
+}
+
+
+/* 180   250   320            150  250  350 */
+
+@keyframes cloudMove1{
+
+    from{
+        left:110%;
+    }
+
+    to{
+        left:-500px;
+    }
+}
+
+@keyframes cloudMove2{
+
+    from{
+        left:130%;
+    }
+
+    to{
+        left:-400px;
+    }
+}
+
+@keyframes cloudMove3{
+
+    from{
+        left:150%;
+    }
+
+    to{
+        left:-600px;
+    }
+}
+
+
+/* DEVIL #1 CLOUD TYPES */
+
+
+
+
+
+
+
+/* 
+.portal-transition{
+    animation: realityMelt 1.2s ease-in-out forwards;
+}
+
+@keyframes realityMelt{
+
+    0%{
+        opacity:1;
+        filter:blur(0px);
+    }
+
+    50%{
+        opacity:1;
+        filter:blur(8px);
+    }
+
+    100%{
+        opacity:0;
+        filter:blur(35px);
+        transform:scale(1.2);
+    }
+
+}
+
+
+.portal-blackout{
+    position:fixed;
+    inset:0;
+
+    background:black;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:99999;
+}
+
+
+
+.portal-blackout.active{
+    animation:blackout 1.2s forwards;
+}
+
+@keyframes blackout{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+} */
+
+#rain-container{
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+    overflow:hidden;
+    z-index:4;
+}
+
+#testRain{
+
+    position:fixed;
+    top:-50px;
+    left:100px;
+
+    width:2px;
+    height:50px;
+
+    background:white;
+    z-index:999999;
+    animation:fall 1s linear infinite;
+}
+
+@keyframes fall{
+
+    from{
+        top:-50px;
+    }
+
+    to{
+        top:110vh;
+    }
+}
+
+.raindrop{
+
+    position:absolute;
+    top:-20px;
+
+    width:2px;
+    height:15px;
+    background:white;
+    opacity:0.3;
+
+    animation:rainFall linear forwards;
+    filter: blur(0.6px);
+}
+
+@keyframes rainFall{
+
+    from{
+        transform:
+        translate(0,0);
+    }
+
+    to{
+        transform:
+        translate(-60px,110vh);
+    }
+}
+
+/* #rain-overlay{
+
+    position:fixed;
+    inset:0;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(40,50,70,0.25),
+        rgba(20,25,40,0.15)
+    );
+
+    opacity:0;
+    pointer-events:none;
+    transition:0.8s ease;
+    z-index:1;
+
+} */
+
+
+#rain-overlay{
+
+    position:fixed;
+    inset:0;
+
+background:
+linear-gradient(
+    to bottom,
+    rgba(30,40,60,0.45),
+    rgba(15,20,35,0.30)
+);
+
+    opacity:0;
+    pointer-events:none;
+    transition:0.8s ease;
+    z-index:3;
+    backdrop-filter: blur(0.4px);
+}
+
+
+
+</style>
+</head>
+<body>
+
+
+
+<!-- /* ================================================== buttons and stuff ===================================================  */ -->
+
+
+<div id="dreamWorld">
+
+<div class="SearchBoxContainer">
+<input type="text" class="input" id="SearchBox" placeholder="Search it...">
+</div>
+
+<div class="sun"></div>
+<div class="moon"></div>
+<div class="morning-day"></div>
+<div class="day-evening"></div>
+<div class="evening-night"></div>
+<div class="night-deep night"></div>
+<div class="night-morning"></div>
+
+<h2 class="clock" id="clock">00:00:00</h2>
+<h1 class="DreamEdition">Dream ✦ Edition</h1>
+<h4 class="built-by">Built by Smit ⚡</h4>
+
+<div class="ai-container">
+    <button class="ai">AI</button>
+
+    <div class="ai-panel">
+
+        <div class="chat-area"></div>
+
+        <div class="input-area">
+
+            <input
+                type="text"
+                class="chat-input"
+                placeholder="Ask AI...">
+
+            <button type="button" class="send-btn">
+                Send
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="weather-box">
+
+    <div class="day-wind-particles"></div>
+
+    <h3 id="temp">27°C .</h3>
+    <p class="city" id="city">Kolkata.</p>
+    <p class="condition" id="condition">⛈ Thunderstorm</p>
+
+</div>
+
+<div class="particles"></div>
+<div class="clouds"></div>
+
+<!--
+I'm Sorry.. I really don't wanna remove these buttons. These two were the first Buttons of my Web😭😭. but currently they are not working and 
+also I feel no need of them. Right now I don't have time to fix them and also no need. so I replaced them with the shortcuts to the websites 
+and the digital clock which is working perfectly fine and also looks good on the website so I hope you understand and forgive me for this
+ decision. They Were the First Foundation of this website. It really hurts to remove them but I have to do it for the betterment of the website.
+  I hope you understand and forgive me for this decision
+
+<button class="login">Login</button>
+<button class="signup">Sign Up</button> -->
+
+
+<div class="shortcuts">
+
+    <button class="youtube" id="youtube-btn">YouTube</button>
+
+    <button class="instagram" id="instagram-btn">Instagram</button>
+
+    <button class="github" id="github-btn">GitHub</button>
+
+    <button class="chatgpt" id="chatgpt-btn">ChatGPT</button>
+
+    <button class="whatsapp" id="whatsapp-btn">WhatsApp</button>
+
+</div>
+
+<h2 class="clock" id="clock"></h2>
+<p class="time-status" id="time-status"></p>
+
+<div class="dream-container">
+<button class="dream-btn"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"/></svg></button>
+</div>
+
+
+<!-- <div class="portal-blackout"></div> -->
+
+</div>
+
+<div id="rain-container"></div>
+<div id="rain-overlay"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- /* ================================================== All JavaScript Code ================================================== */ -->
+ <script>
+/* ================================= SEARCH FUNCTIONS ================================= */
+
+function searchYouTube() {
+    let text = document.getElementById("SearchBox").value;
+    window.location.href =
+    "https://www.youtube.com/results?search_query=" + text;
+}
+
+document.getElementById("youtube-btn")
+.addEventListener("click", searchYouTube);
+
+
+function searchInstagram() {
+    let text = document.getElementById("SearchBox").value;
+    window.location.href =
+    "https://www.instagram.com/" + text;
+}
+
+document.getElementById("instagram-btn")
+.addEventListener("click", searchInstagram);
+
+
+function searchGitHub() {
+    let text = document.getElementById("SearchBox").value;
+    window.location.href =
+    "https://github.com/search?q=" + text;
+}
+
+document.getElementById("github-btn")
+.addEventListener("click", searchGitHub);
+
+
+function searchChatGPT() {
+    let text = document.getElementById("SearchBox").value;
+    window.location.href =
+    "https://chatgpt.com/?q=" + text;
+}
+
+document.getElementById("chatgpt-btn")
+.addEventListener("click", searchChatGPT);
+
+
+function searchWhatsApp() {
+    let text = document.getElementById("SearchBox").value;
+    window.location.href =
+    "https://web.whatsapp.com/send?text=" + text;
+}
+
+document.getElementById("whatsapp-btn")
+.addEventListener("click", searchWhatsApp);
+
+
+function searchGoogle() {
+    let text = document.getElementById("SearchBox").value;
+    window.location.href =
+    "https://www.google.com/search?q=" + text;
+}
+
+document.getElementById("SearchBox")
+.addEventListener("keydown", function(event) {
+    if(event.key === "Enter") {
+        searchGoogle();
+    }
+});
+
+
+/* ================================= CLOCK ================================= */
+
+function updateClock() {
+
+    const now = new Date();
+
+    let hours = now.getHours();
+
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+    const ampm = hours >= 12 ? 'OF Evening' : 'OF Morning';
+
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+
+    document.getElementById('clock').textContent =
+    `${hours}:${minutes}:${seconds}`;
+
+    document.getElementById('time-status').textContent =
+    ampm;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+
+
+
+
+/* ================================= ENVIRONMENT ================================= */
+
+const TEST_MODE = false;
+
+let fakeTime = 4;
+
+function updateEnvironment() {
+
+    let currentTime;
+
+    if(TEST_MODE){
+
+        currentTime = fakeTime;
+
+    }else{
+
+        const now = new Date();
+
+        currentTime =
+            now.getHours() +
+            now.getMinutes() / 60 +
+            now.getSeconds() / 3600;
+    }
+    
+const sunrise = 4;
+const sunset = 18.25;
+
+let progress =
+    (currentTime - sunrise) /
+    (sunset - sunrise);
+
+progress =
+    Math.max(0, Math.min(progress, 1));
+
+    const sun = document.querySelector(".sun");
+    const moon = document.querySelector(".moon");
+
+    const morningDay =
+        document.querySelector(".morning-day");
+
+    const dayEvening =
+        document.querySelector(".day-evening");
+
+    const eveningNight =
+        document.querySelector(".evening-night");
+
+    const nightDeep =
+        document.querySelector(".night-deep");
+
+    const nightMorning =
+        document.querySelector(".night-morning");
+
+
+    // RESET SKY
+
+    morningDay.style.opacity = "0";
+    dayEvening.style.opacity = "0";
+    eveningNight.style.opacity = "0";
+    nightDeep.style.opacity = "0";
+    nightMorning.style.opacity = "0";
+
+
+    // =========================
+    // SKY STATES
+    // =========================
+
+if(progress < 0.10){
+
+    nightMorning.style.opacity = "1";
+
+}
+else if(progress < 0.55){
+
+    morningDay.style.opacity = "1";
+
+}
+else if(progress < 0.80){
+
+    dayEvening.style.opacity = "1";
+
+}
+else if(progress < 1){
+
+    eveningNight.style.opacity = "1";
+
+}
+else{
+
+    nightDeep.style.opacity = "1";
+
+}
+
+
+    // =========================
+    // SUN SYSTEM
+    // 4:00 → 18:15
+    // =========================
+
+
+    if(currentTime >= sunrise &&
+       currentTime <= sunset){
+
+        const progress =
+            (currentTime - sunrise) /
+            (sunset - sunrise);
+
+        const angle =
+            progress * Math.PI;
+
+        const x =
+            5 + progress * 90;
+
+        const y =
+            80 - Math.sin(angle) * 75;
+
+        sun.style.left = `${x}%`;
+        sun.style.top = `${y}%`;
+
+        sun.style.opacity = "1";
+
+        const glow =
+            Math.sin(angle);
+
+        sun.style.boxShadow =
+            `0 0 ${60 + glow * 120}px rgba(255,221,0,${0.5 + glow * 0.5})`;
+
+    }
+
+    else{
+
+        sun.style.opacity = "0";
+
+        sun.style.left = "5%";
+        sun.style.top = "80%";
+
+    }
+
+
+    // =========================
+    // MOON SYSTEM
+    // 18:40 → 04:00
+    // =========================
+
+    const moonrise = 18.67;
+    const moonset = 28;
+
+    let moonTime =
+        currentTime;
+
+    if(moonTime < 4){
+
+        moonTime += 24;
+
+    }
+
+    if(moonTime >= moonrise &&
+       moonTime <= moonset){
+
+        const moonProgress =
+            (moonTime - moonrise) /
+            (moonset - moonrise);
+
+        const angle =
+            moonProgress * Math.PI;
+
+        const x =
+            5 + moonProgress * 90;
+
+        const y =
+            80 - Math.sin(angle) * 75;
+
+        moon.style.left = `${x}%`;
+        moon.style.top = `${y}%`;
+
+        moon.style.opacity = "0.8";
+
+    }
+
+    else{
+
+        moon.style.opacity = "0";
+
+        moon.style.left = "5%";
+        moon.style.top = "80%";
+
+    }
+}
+
+updateEnvironment();
+
+setInterval(() => {
+
+    if(TEST_MODE){
+
+        fakeTime += 0.4;
+
+        if(fakeTime >= 24){
+
+            fakeTime = 0;
+        }
+    }
+
+    updateEnvironment();
+
+}, 1000);
+
+
+
+/* ================= TYPING PLACEHOLDER EFFECT ================= */
+
+const placeholders = [
+
+    "Just Search it on Google...",
+    "Wanna scroll reels? YouTube Here!...",
+    "upload your project using GitHub...",
+    "Ask ChatGPT...",
+    "What's going on Instagram...",
+    "Message on WhatsApp..."
+
+];
+
+const searchBox = document.getElementById("SearchBox");
+
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+
+    let currentText = placeholders[textIndex];
+
+    if(isDeleting){
+        searchBox.placeholder =
+        currentText.substring(0, charIndex--);
+
+    }
+
+    else {
+        searchBox.placeholder =
+        currentText.substring(0, charIndex++);
+    }
+
+    let speed = isDeleting ? 150 : 125;
+
+    /* typing finished */
+    if(!isDeleting && charIndex === currentText.length + 1){
+
+        speed = 1500;
+        isDeleting = true;
+    }
+
+    /* deleting finished */
+    else if(isDeleting && charIndex === 0){
+
+        isDeleting = false;
+        textIndex++;
+        if(textIndex >= placeholders.length){
+            textIndex = 0;
+        }
+
+        speed = 400;
+    }
+    setTimeout(typeEffect, speed);
+}
+
+typeEffect();
+
+
+
+// .................============================== AI PANEL ==============================.................
+
+
+const aiButton = document.querySelector(".ai");
+const panel = document.querySelector(".ai-panel");
+const sendBtn = document.querySelector(".send-btn");
+const chatInput = document.querySelector(".chat-input");
+const chatArea = document.querySelector(".chat-area");
+
+aiButton.addEventListener("click", function(){
+    panel.classList.toggle("open");
+});
+
+chatInput.addEventListener("keydown", function(event){
+    panel.classList.add("open");
+    if(event.key === "Enter"){
+        sendBtn.click();
+    }
+});
+
+sendBtn.addEventListener("click", function(){
+
+    console.log("SEND WORKING");
+    const message = chatInput.value;
+    if(message === "") return;
+
+    
+    /* USER MESSAGE */
+    const userMessage = document.createElement("div");
+    userMessage.textContent = message;
+    userMessage.style.color = "white";
+    userMessage.style.background =
+    "rgba(255,255,255,0.1)";
+    userMessage.style.padding = "10px";
+    userMessage.style.borderRadius = "15px";
+    userMessage.style.alignSelf = "flex-end";
+    chatArea.appendChild(userMessage);
+
+
+    /* FAKE AI REPLY */
+    const aiMessage = document.createElement("div");
+    aiMessage.textContent =
+    "Hello Smit 😄";
+    aiMessage.style.color = "white";
+    aiMessage.style.background =
+    "rgba(255,255,255,0.05)";
+    aiMessage.style.padding = "10px";
+    aiMessage.style.borderRadius = "15px";
+    aiMessage.style.alignSelf = "flex-start";
+    chatArea.appendChild(aiMessage);
+
+
+    chatInput.value = "";
+
+});
+
+// ............==============Weather API and all stuff............==============
+const apiKey =
+"2c65bda0e381c8129f371f11cf8f74c2";
+
+async function getWeather(lat, lon){
+
+    const url =
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+    const response =
+    await fetch(url);
+
+    const data =
+    await response.json();
+
+    console.log(
+    data.coord.lat,
+    data.coord.lon
+);
+
+    console.log(data);
+    console.log("Detected City:", data.name);
+
+    document.getElementById("temp").textContent =
+    Math.round(data.main.temp) + "°C";
+
+    document.getElementById("city").textContent =
+    data.name;
+
+    document.getElementById("condition").textContent =
+    data.weather[0].main;
+}
+
+navigator.geolocation.getCurrentPosition(
+
+    function(position){
+
+        const lat =
+        position.coords.latitude;
+
+        const lon =
+        position.coords.longitude;
+
+        console.log("Latitude:", lat);
+        console.log("Longitude:", lon);
+
+        getWeather(lat, lon);
+
+    },
+
+    function(){
+
+        console.log(
+            "Location permission denied"
+        );
+    }
+
+);
+
+
+
+
+// ..........===============Night Particals====================.............
+
+// ================= PARTICLE SYSTEM =================
+
+const particleContainer =
+document.querySelector(".particles");
+
+function createParticles() {
+
+    const particlesEnabled =
+    localStorage.getItem("particlesEnabled")
+    === "true";
+
+    if (!particlesEnabled) {
+
+        particleContainer.innerHTML = "";
+        return;
+    }
+
+    particleContainer.innerHTML = "";
+
+        const particleCount =
+    parseInt(
+        localStorage.getItem("particleCount")
+    ) || 30;
+
+
+    for(let i = 0; i < particleCount; i++) {
+
+        const p =
+        document.createElement("div");
+
+        p.classList.add("particle");
+
+        const size =
+        Math.random() * 5 + 2;
+
+        p.style.width =
+        size + "px";
+
+        p.style.height =
+        size + "px";
+
+        p.style.left =
+        Math.random() * 100 + "vw";
+
+        p.style.top =
+        Math.random() * 100 + "vh";
+
+        p.style.animation =
+        `floatUp ${Math.random() * 5 + 3}s linear infinite`;
+
+        particleContainer.appendChild(p);
+    }
+}
+
+
+// ================= INITIAL LOAD =================
+
+createParticles();
+
+
+// ================= AUTO CHECK =================
+
+let lastParticleState =
+localStorage.getItem("particlesEnabled");
+
+setInterval(() => {
+
+    const currentState =
+    localStorage.getItem("particlesEnabled");
+
+    if (currentState !== lastParticleState) {
+
+        lastParticleState =
+        currentState;
+
+        createParticles();
+    }
+
+}, 500);
+
+
+// // ..........===============Day paticals====================.............
+
+// if (hours >= 6 && hours < 19) {
+//     createParticles("day");
+// } else {
+//     createParticles("night");
+// }
+
+// function createDayParticles() {
+
+// const dayContainer = document.querySelector(".day-particles");
+
+
+//     dayContainer.innerHTML = ""; // prevent stacking
+
+//     for (let i = 0; i < 25; i++) {
+
+//         const p = document.createElement("div");
+//         p.classList.add("day-particle");
+
+//         p.style.animationName = "floatUp";
+//         p.style.animationTimingFunction = "linear";
+//         p.style.animationIterationCount = "infinite";
+
+//         dayContainer.appendChild(p);
+//     }
+// }
+
+// // ...............===============Controler of particals================....................
+
+// function updateParticlesMode() {
+
+//     const hours = new Date().getHours();
+
+//     if (hours >= 6 && hours < 19) {
+//         createParticles("day");
+//     } else {
+//         createParticles("night");
+//     }
+// }
+
+
+
+
+
+
+
+// ============================================================================================================================================
+
+
+
+const dreamBtn = document.querySelector(".dream-btn");
+
+dreamBtn.addEventListener("click", ()=>{
+
+    window.location.href = "Dream_edition-openerv0.1.html";
+
+});
+
+
+
+
+
+
+
+// ================================
+// SETTINGS
+// ================================
+
+const cloudsEnabled =
+localStorage.getItem("cloudsEnabled")
+=== "true";
+
+// particlesEnabled is declared above for the particle system
+
+// ================================
+// CLOUD SYSTEM
+// ================================
+
+const cloudContainer =
+document.querySelector(".clouds");
+
+function createCloud(){
+
+    // Safety Lock
+    if(!cloudsEnabled){
+        return;
+    }
+
+    const cloud = document.createElement("div");
+
+    const type =
+    Math.floor(Math.random() * 3) + 1;
+
+    cloud.classList.add("cloud");
+    cloud.classList.add("cloud" + type);
+
+    const size =
+    Math.random() * 250 + 250;
+
+    cloud.style.width =
+    size + "px";
+
+    cloud.style.height =
+    size * 0.6 + "px";
+
+    cloud.style.top =
+    Math.random() * 35 + "vh";
+
+    cloud.style.left =
+    "110vw";
+
+    cloud.style.opacity =
+    Math.random() * 0.4 + 0.2;
+
+    const scale =
+    Math.random() * 0.6 + 0.7;
+
+    cloud.style.transform =
+    `scale(${scale})`;
+
+    const duration =
+    Math.random() * 30 + 30;
+
+    cloud.style.animationDuration =
+    duration + "s";
+
+    cloudContainer.appendChild(cloud);
+
+    setTimeout(() => {
+
+        cloud.remove();
+
+    }, duration * 1000);
+
+}
+
+
+// ================================
+// WEATHER MANAGER
+// ================================
+
+const WeatherManager = {
+
+    current: "sunny",
+    maxClouds: 8,
+    spawnRate: 5000,
+    cloudBrightness: 100
+
+};
+
+
+// ================================
+// INITIAL CLOUD SPAWN
+// ================================
+
+if(cloudsEnabled){
+
+    for(let i = 0; i < 8; i++){
+
+        createCloud();
+
+    }
+
+}
+
+
+// ================================
+// CLOUD SPAWNER #1
+// ================================
+
+if(cloudsEnabled){
+
+    setInterval(() => {
+
+        createCloud();
+
+    }, 2000);
+
+}
+
+
+// ================================
+// CLOUD SPAWNER #2
+// ================================
+
+if(cloudsEnabled){
+
+    setInterval(() => {
+
+        const cloudCount =
+        document.querySelectorAll(".cloud")
+        .length;
+
+        if(
+            cloudCount <
+            WeatherManager.maxClouds
+        ){
+
+            createCloud();
+
+        }
+
+    }, WeatherManager.spawnRate);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let rainInterval;
+
+function createDrop(){
+
+    
+    const container =
+    document.getElementById("rain-container");
+
+    const drop =
+    document.createElement("div");
+
+    drop.classList.add("raindrop");
+
+    drop.style.left =
+        Math.random() * 100 + "%";
+
+let height =
+    Math.random() * 15 + 5;
+
+let width =
+    Math.random() * 1.5 + 1;
+
+let opacity =
+    Math.random() * 0.5 + 0.2;
+
+// 20% chance of a heavy drop
+if(Math.random() < 0.2){
+
+    height =
+        Math.random() * 10 + 5;
+
+    width =
+        Math.random() * 1.5 + 2;
+
+    opacity = 0.8;
+}
+
+    const brightness =
+        Math.floor(Math.random() * 55 + 200);
+
+    const duration =
+        Math.random() * 0.8 + 0.8;
+
+    const angle =
+        Math.random() * 8 - 4;
+
+    drop.style.height = height + "px";
+    drop.style.width = width + "px";
+    drop.style.opacity = opacity;
+    const blue =
+    Math.floor(
+    Math.random()*30+220
+    );
+
+    drop.style.filter =
+    `blur(${Math.random()*1.2}px)`;
+
+    drop.style.background =
+    `rgb(${blue},${blue},255)`;
+
+    drop.style.transform =
+        `rotate(${angle}deg)`;
+
+    drop.style.animationDuration =
+        duration + "s";
+
+    container.appendChild(drop);
+
+    setTimeout(() => {
+
+        drop.remove();
+
+    }, duration * 1000);
+}
+
+function startRain(){
+
+    const overlay =
+    document.getElementById(
+        "rain-overlay"
+    );
+
+    if(overlay){
+        overlay.style.opacity = "1";
+    }
+
+    const container =
+    document.getElementById("rain-container");
+
+    container.innerHTML = "";
+
+    rainInterval = setInterval(() => {
+
+        createDrop();
+
+    }, 10);
+}
+
+    function stopRain(){
+
+        clearInterval(rainInterval);
+
+        document.getElementById(
+            "rain-container"
+        ).innerHTML = "";
+
+        const overlay =
+        document.getElementById(
+            "rain-overlay"
+        );
+
+        if(overlay){
+            overlay.style.opacity = "0";
+        }
+    }
+
+
+function stopRain(){
+
+    clearInterval(rainInterval);
+
+    document.getElementById(
+        "rain-container"
+    ).innerHTML = "";
+}
+
+if(
+    localStorage.getItem("rainEnabled")
+    === "true"
+){
+    startRain();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+<!-- <p>this is an example in case if I use it later *bro I litrally wrote latter on the place of later🤣🤣</p> -->
+    <!--           <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800" alt="Nature Image"          COMMENT OUT> -->
+    <!--           <input type="text" placeholder="Search...">             -->
+    
+    <!--                  padding: 8px;
+                              border: 1px solid #ccc;
+                                 border-radius: 4px;               -->
+
+
+
+
+
+<!--.youtube:hover,
+ .instagram:hover,
+.github:hover,
+.chatgpt:hover {
+
+    box-shadow: 0 0 15px rgb(255, 255, 255);
+
+    background-color: white;
+
+    color: rgb(36, 123, 173);
+
+    border: white solid 2px;
+
+    transition: 0.8s;
+
+    transform: scale(1.05);
+
+} -->
+
+
+
+

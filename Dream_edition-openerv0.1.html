@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+</head>
+
+<style>
+
+/* =====================Background========================= */
+body{
+    margin:0;
+    height:100vh;
+    overflow:hidden;
+
+    background:#000;
+
+    display:flex;
+    flex-direction:column;
+
+    font-family:"Exo",sans-serif;
+}
+
+
+.h1 {
+    color:white;
+    font-size:4rem;
+    letter-spacing:5px;
+    white-space:nowrap;   /* ADD THIS */
+
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+
+    z-index:2;
+
+    opacity:0;
+
+    animation:titleJourney 3s ease forwards;
+}
+/* .homecontainer{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    z-index:2;
+} */
+
+.dream-btn{
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+
+    width: 48px;
+    height: 48px;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50px;
+    border: 2px solid #fff;
+
+    background: transparent;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+    overflow: hidden;
+
+    backdrop-filter: blur(5px);
+
+    z-index: 1;
+    transition: 0.5s;
+}
+
+
+/* RGB BORDER */
+.dream-btn::before{
+
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 50px;
+
+    background: linear-gradient(
+        90deg,
+        #8b5cf6,
+        #a78bfa,
+        #93c5fd,
+        #c4b5fd,
+        #8b5cf6
+    );
+
+    background-size: 300%;
+    z-index: -2;
+    animation: rgbMove2 6s linear infinite;
+}
+
+
+/* INNER LAYER */
+.dream-btn::after{
+
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 50px;
+    background: transparent;
+    z-index: -1;
+}
+
+
+/* RGB MOVEMENT */
+@keyframes rgbMove2{
+
+    0%{
+        background-position: 600%;
+    }
+    100%{
+        background-position: 0%;
+    }
+}
+
+
+
+
+
+
+
+/* Stars */
+
+.stars{
+    position:fixed;
+    inset:0;
+
+    background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 2px, transparent 2px);
+
+    background-size:
+    120px 120px,
+    180px 180px,
+    250px 250px;
+
+    background-position:
+    0 0,
+    50px 80px,
+    100px 40px;
+
+    opacity:0.8;
+
+    z-index:0;
+}
+
+/* Title */
+
+.title{
+
+    color:white;
+    font-size:4rem;
+    letter-spacing:5px;
+    white-space:nowrap;   /* ADD THIS */
+    position:fixed;
+    
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    z-index:2;
+
+    opacity:0;
+
+    animation:titleJourney 3s ease forwards;
+}
+
+@keyframes titleJourney{
+
+    0%{
+        opacity:0;
+        top:40%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        font-size:4rem;
+    }
+
+    20%{
+        opacity:1;
+        top:40%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        font-size:4rem;
+    }
+
+    55%{
+        opacity:1;
+        top:40%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        font-size:4rem;
+    }
+
+    85%{
+        opacity:1;
+
+        top:25px;
+        left:30px;
+
+        transform:none;
+
+        font-size:2rem; 
+    }
+
+    100%{
+        opacity:1;
+
+        top:25px;
+        left:30px;
+
+        transform:none;
+
+        font-size:2rem; /* shrink only after arrival */
+    }
+
+}
+
+/* Button */
+
+.enter-btn{
+
+    margin-top:40px;
+    width:180px;
+    height:55px;
+    border:none;
+    border-radius:50px;
+    background:white;
+    color:black;
+    font-size:1rem;
+    font-weight:bold;
+    cursor:pointer;
+    position:relative;
+    z-index:2;
+    opacity:0;
+    animation:buttonRise 1.5s ease forwards;
+    animation-delay:0.8s;
+}
+
+@keyframes buttonRise{
+
+    from{
+        opacity:0;
+        transform:translateY(150px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+/* ==============texts=========================  */
+
+
+
+.auto{
+    position:absolute;
+    top:2%;
+    left:3%;
+    font-size:30px;
+    color:rgb(0, 0, 0);
+    font-weight:600;
+}
+.dnc-container{
+    position:absolute;
+    top:18%;
+    left:2%;
+    display:flex;
+    align-items:center;
+    gap:50px;
+}
+
+.dnc{
+    font-size:20px;
+    color:rgb(255, 255, 255);
+    font-weight:600;
+}
+
+
+/* ======================toggle-Buttons=========================  */
+
+.toggle-container{
+    position:relative;
+    transform:none;
+}
+
+.toggle1{
+    width:90px;
+    height:40px;
+    background:transparent;
+    border:2px solid rgba(255,255,255,0.3);
+    border-radius:20px;
+    color:transparent;
+}
+
+
+/* MOVING DOT */
+.daynight{
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    cursor:pointer;
+
+    position:absolute;
+    top:50%;
+    left:3px;
+    transform:translateY(-50%);
+
+    background:linear-gradient(90deg,#8b5cf6,#93c5fd);
+
+    transition:0.3s ease;
+}
+
+
+.daynight::before{
+
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 50px;
+
+    background: linear-gradient(
+        90deg,
+        #8b5cf6,
+        #a78bfa,
+        #93c5fd,
+        #c4b5fd,
+        #8b5cf6
+    );
+
+    background-size: 600%;
+    z-index: -2;
+    animation: rgbMove2 10s linear infinite;
+}
+
+
+/* INNER LAYER */
+.daynight::after{
+
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 50px;
+    background: transparent;
+    z-index: -1;
+}
+
+
+
+
+/* RGB MOVEMENT */
+@keyframes rgbMove2{
+
+    0%{
+        background-position: 600%;
+    }
+    100%{
+        background-position: 0%;
+    }
+}
+
+
+.dynamicdaylight{
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    cursor:pointer;
+
+    position:absolute;
+    top:50%;
+    left:3px;
+    transform:translateY(-50%);
+
+    background:linear-gradient(90deg,#8b5cf6,#93c5fd);
+
+    transition:0.3s ease;
+}
+
+
+.dynamicdaylight::before{
+
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 50px;
+
+    background: linear-gradient(
+        90deg,
+        #8b5cf6,
+        #a78bfa,
+        #93c5fd,
+        #c4b5fd,
+        #8b5cf6
+    );
+
+    background-size: 600%;
+    z-index: -2;
+    animation: rgbMove2 10s linear infinite;
+}
+
+
+/* INNER LAYER */
+.dynamicdaylight::after{
+
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 50px;
+    background: transparent;
+    z-index: -1;
+}
+
+
+
+
+/* RGB MOVEMENT */
+@keyframes rgbMove2{
+
+    0%{
+        background-position: 600%;
+    }
+    100%{
+        background-position: 0%;
+    }
+}
+
+
+.dynamicclouds{
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    cursor:pointer;
+    position:absolute;
+    top:50%;
+    left:3px;
+    transform:translateY(-50%);
+
+    background:linear-gradient(90deg,#8b5cf6,#93c5fd);
+
+    transition:0.3s ease;
+}
+
+
+.dynamicclouds::before{
+
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 50px;
+
+    background: linear-gradient(
+        90deg,
+        #8b5cf6,
+        #a78bfa,
+        #93c5fd,
+        #c4b5fd,
+        #8b5cf6
+    );
+
+    background-size: 600%;
+    z-index: -2;
+    animation: rgbMove2 10s linear infinite;
+}
+
+
+/* INNER LAYER */
+.dynamicclouds::after{
+
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 50px;
+    background: transparent;
+    z-index: -1;
+}
+
+
+
+
+/* RGB MOVEMENT */
+@keyframes rgbMove2{
+
+    0%{
+        background-position: 600%;
+    }
+    100%{
+        background-position: 0%;
+    }
+}
+
+
+
+.circle4{
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    cursor:pointer;
+    position:absolute;
+    top:50%;
+    left:3px;
+    transform:translateY(-50%);
+
+    background:linear-gradient(90deg,#8b5cf6,#93c5fd);
+
+    transition:0.3s ease;
+}
+
+
+.circle4::before{
+
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 50px;
+
+    background: linear-gradient(
+        90deg,
+        #8b5cf6,
+        #a78bfa,
+        #93c5fd,
+        #c4b5fd,
+        #8b5cf6
+    );
+
+    background-size: 600%;
+    z-index: -2;
+    animation: rgbMove2 10s linear infinite;
+}
+
+
+/* INNER LAYER */
+.circle4::after{
+
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 50px;
+    background: transparent;
+    z-index: -1;
+}
+
+
+
+
+/* RGB MOVEMENT */
+@keyframes rgbMove2{
+
+    0%{
+        background-position: 600%;
+    }
+    100%{
+        background-position: 0%;
+    }
+}
+
+
+.control-panel{
+    position:fixed;
+    left:40px;
+    top:120px;
+
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+
+    z-index:5;
+}
+
+/* EACH LINE ITEM (THIS IS YOUR "ENTER REALM" STYLE) */
+.item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    width:260px;
+
+    color:white;
+    font-size:18px;
+    letter-spacing:1px;
+
+    opacity:0;
+    transform:translateY(40px);
+
+    animation:itemRise 0.8s ease forwards;
+}
+
+/* SAME FEEL AS ENTER BTN */
+@keyframes itemRise{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+.rain{
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    cursor:pointer;
+
+    position:absolute;
+    top:50%;
+    left:3px;
+    transform:translateY(-50%);
+
+    background:linear-gradient(90deg,#8b5cf6,#93c5fd);
+
+    transition:0.3s ease;
+}
+
+
+.rain::before{
+
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 50px;
+
+    background: linear-gradient(
+        90deg,
+        #8b5cf6,
+        #a78bfa,
+        #93c5fd,
+        #c4b5fd,
+        #8b5cf6
+    );
+
+    background-size: 600%;
+    z-index: -2;
+    animation: rgbMove2 10s linear infinite;
+}
+
+
+/* INNER LAYER */
+.rain::after{
+
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 50px;
+    background: transparent;
+    z-index: -1;
+}
+
+
+
+
+/* RGB MOVEMENT */
+@keyframes rgbMove2{
+
+    0%{
+        background-position: 600%;
+    }
+    100%{
+        background-position: 0%;
+    }
+}
+
+/* TOGGLE STYLE (MINIMAL, NOT BUTTON-LIKE) */
+.toggle1{
+    width:50px;
+    height:22px;
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,0.3);
+
+    position:relative;
+}
+
+.toggle2{
+    width:50px;
+    height:22px;
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,0.3);
+
+    position:relative;
+}
+
+
+.toggle3{
+    width:50px;
+    height:22px;
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,0.3);
+
+    position:relative;
+}
+
+
+.toggle4{
+    width:50px;
+    height:22px;
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,0.3);
+
+    position:relative;
+}
+
+.toggle5{
+    width:50px;
+    height:22px;
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,0.3);
+
+    position:relative;
+
+    cursor:pointer;
+
+    z-index:99999;
+}
+/* #particleCount{
+
+        width: 80px;
+        height: 30px;
+        border: 4px solid #ccc;
+        border-radius: 40px;
+        padding-left: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: rgb(255, 255, 255);
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        transition: 0.6s;;
+} */
+
+#particleCount{
+
+    width: 80px;
+    height: 30px;
+
+    border-radius: 10px;
+
+    padding: 0 10px;
+
+    font-size: 14px;
+
+    border: none;
+
+    background-color: rgba(
+        255,
+        255,
+        255,
+        0.2
+    );
+
+    color: white;
+
+    text-align: center;
+
+    position: relative;
+    z-index: 9999;
+
+}
+
+.particle-settings{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    animation:itemRise 0.8s ease forwards;
+
+    animation-delay:3.1s;
+
+    color:white;
+
+}
+
+#particleWarning{
+
+    color:white;
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    animation:itemRise 0.8s ease forwards;
+
+    animation-delay:3.3s;
+
+    font-size: 13px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+
+
+
+
+<div class="stars"></div>
+
+<h1 class="title">Dream ✦ Edition</h1>
+
+<div class="control-panel">
+
+    <div class="item" style="animation-delay:2s">
+        <span>Auto</span>
+    </div>
+
+    <div class="item" style="animation-delay:2.3s">
+        <span>Basic Day/Night Cycle</span>
+        <div class="toggle1">
+            <div class="daynight"></div>
+        </div>
+    </div>
+
+    <div class="item" style="animation-delay:2.5s">
+        <span>Dynamic Day/Night Cy</span>
+        <div class="toggle2">
+            <div class="dynamicdaylight"></div>
+        </div>
+    </div>
+
+    <div class="item" style="animation-delay:2.7s">
+        <span>Dynamic Clouds</span>
+        <div class="toggle3">
+            <div class="dynamicclouds"></div>
+        </div>
+    </div>
+
+<div class="item" style="animation-delay:2.9s">
+    <span>Particles</span>
+
+    <div class="toggle4">
+        <div class="circle4"></div>
+    </div>
+</div>
+
+<div class="particle-settings" style="animation-delay:3.1s">
+
+    <span>Particle Amount</span>
+
+    <input
+        id="particleCount"
+        type="number"
+        min="0"
+        max="100000"
+        value="30">
+
+    <div id="particleWarning">
+        Load: Low
+    </div>
+
+</div>
+
+<div class="item" style="animation-delay:3.3s">
+    <span>Rain</span>
+
+    <div class="toggle5">
+        <div class="rain"></div>
+    </div>
+</div>
+
+<div class="dream-container">
+
+
+
+<div class="dream-container">
+    <button class="dream-btn">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+             height="40px"
+             viewBox="0 -960 960 960"
+             width="40px"
+             fill="#e3e3e3">
+
+            <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
+
+        </svg>
+
+    </button>
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+const dreamBtn = document.querySelector(".dream-btn");
+
+dreamBtn.addEventListener("click", ()=>{
+
+    const basicCycle =
+    localStorage.getItem("toggle1") === "true";
+    
+    
+
+    const dynamicCycle =
+    localStorage.getItem("toggle2") === "true";
+
+    if(dynamicCycle){
+
+        window.location.href =
+        "Dream-edition3.html";
+
+    }else if(basicCycle){
+
+        window.location.href =
+        "Dream-edition2.html";
+
+    }else{
+
+        alert(
+            "Please select a Day/Night mode."
+        );
+    }
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+const toggle1 = document.querySelector(".toggle1");
+const daynight = document.querySelector(".daynight");
+
+let isOn1 =
+localStorage.getItem("toggle1") === "true";
+
+if(isOn1){
+
+    daynight.style.transform =
+    "translateY(-50%) translateX(28px)";
+
+}else{
+
+    daynight.style.transform =
+    "translateY(-50%) translateX(0px)";
+}
+
+toggle1.addEventListener("click", function(){
+
+    isOn1 = !isOn1;
+
+    localStorage.setItem(
+        "toggle1",
+        isOn1
+    );
+
+    if(isOn1){
+
+        daynight.style.transform =
+        "translateY(-50%) translateX(28px)";
+
+        isOn2 = false;
+
+        localStorage.setItem(
+            "toggle2",
+            false
+        );
+
+        dynamicdaylight.style.transform =
+        "translateY(-50%) translateX(0px)";
+
+    }else{
+
+        daynight.style.transform =
+        "translateY(-50%) translateX(0px)";
+    }
+
+});
+
+
+
+const toggle2 = document.querySelector(".toggle2");
+const dynamicdaylight = document.querySelector(".dynamicdaylight");
+
+let isOn2 =
+localStorage.getItem("toggle2") === "true";
+
+if(isOn2){
+
+    dynamicdaylight.style.transform =
+    "translateY(-50%) translateX(28px)";
+
+}else{
+
+    dynamicdaylight.style.transform =
+    "translateY(-50%) translateX(0px)";
+}
+
+toggle2.addEventListener("click", function(){
+
+    isOn2 = !isOn2;
+
+    localStorage.setItem(
+        "toggle2",
+        isOn2
+    );
+
+    if(isOn2){
+
+        dynamicdaylight.style.transform =
+        "translateY(-50%) translateX(28px)";
+
+        isOn1 = false;
+
+        localStorage.setItem(
+            "toggle1",
+            false
+        );
+
+        daynight.style.transform =
+        "translateY(-50%) translateX(0px)";
+
+    }else{
+
+        dynamicdaylight.style.transform =
+        "translateY(-50%) translateX(0px)";
+    }
+
+});
+
+
+
+const toggle3 =
+document.querySelector(".toggle3");
+
+const dynamicclouds =
+document.querySelector(".dynamicclouds");
+
+
+let isOn3 =
+localStorage.getItem("cloudsEnabled")
+=== "true";
+
+
+if(isOn3){
+
+    dynamicclouds.style.transform =
+    "translateY(-50%) translateX(28px)";
+
+}else{
+
+    dynamicclouds.style.transform =
+    "translateY(-50%) translateX(0px)";
+}
+
+
+toggle3.addEventListener("click", function(){
+
+    isOn3 = !isOn3;
+
+    localStorage.setItem(
+        "cloudsEnabled",
+        isOn3
+    );
+
+    if(isOn3){
+
+        dynamicclouds.style.transform =
+        "translateY(-50%) translateX(28px)";
+
+    }else{
+
+        dynamicclouds.style.transform =
+        "translateY(-50%) translateX(0px)";
+    }
+
+});
+
+
+const toggle4 =
+document.querySelector(".toggle4");
+
+const circle4 =
+document.querySelector(".circle4");
+
+let isOn4 =
+localStorage.getItem("particlesEnabled")
+=== "true";
+
+
+if(isOn4){
+
+    circle4.style.transform =
+    "translateY(-50%) translateX(28px)";
+
+}else{
+
+    circle4.style.transform =
+    "translateY(-50%) translateX(0px)";
+}
+
+
+toggle4.addEventListener("click", function(){
+
+    isOn4 = !isOn4;
+
+    localStorage.setItem(
+        "particlesEnabled",
+        isOn4
+    );
+
+    if(isOn4){
+
+        circle4.style.transform =
+        "translateY(-50%) translateX(28px)";
+
+    }else{
+
+        circle4.style.transform =
+        "translateY(-50%) translateX(0px)";
+    }
+
+});
+
+
+
+// ===== PARTICLE INPUT =====
+
+const particleInput =
+document.getElementById("particleCount");
+
+const warning =
+document.getElementById("particleWarning");
+
+particleInput.value =
+localStorage.getItem("particleCount")
+|| 30;
+
+updateParticleInfo();
+
+particleInput.addEventListener(
+"input",
+() => {
+
+    localStorage.setItem(
+        "particleCount",
+        particleInput.value
+    );
+
+    updateParticleInfo();
+
+});
+
+    function updateParticleInfo(){
+
+    const value =
+    parseInt(
+        particleInput.value
+    );
+
+    if(value <= 30){
+
+        warning.textContent =
+        "Load: Low";
+
+    }else if(value <= 65){
+
+        warning.textContent =
+        "Load: Normal";
+
+    }else if(value <= 120){
+
+        warning.textContent =
+        "Load: High";
+
+    }else if(value <= 200){
+
+        warning.textContent =
+        "Load: Extream";
+
+    }else if(value <= 1500){
+
+        warning.textContent =
+        "Load: Extreamly Heavy";
+
+    }else if(value <= 100000){
+
+        warning.textContent =
+        "Load: Ultra";
+
+    }else{
+
+        warning.textContent =
+        "Load: None";
+    }
+
+}
+
+const toggle5 =
+document.querySelector(".toggle5");
+
+const rainToggle =
+document.querySelector(".rain");
+
+let isOn5 =
+localStorage.getItem("rainEnabled")
+=== "true";
+
+if(isOn5){
+
+    rainToggle.style.transform =
+    "translateY(-50%) translateX(28px)";
+
+}else{
+
+    rainToggle.style.transform =
+    "translateY(-50%) translateX(0px)";
+}
+
+toggle5.addEventListener("click", function(){
+
+    isOn5 = !isOn5;
+
+    localStorage.setItem(
+        "rainEnabled",
+        isOn5
+    );
+
+    if(isOn5){
+
+        rainToggle.style.transform =
+        "translateY(-50%) translateX(28px)";
+
+    }else{
+
+        rainToggle.style.transform =
+        "translateY(-50%) translateX(0px)";
+    }
+
+});
+
+// const toggle5 =
+// document.querySelector(".toggle5");
+
+// const rain =
+// document.querySelector(".rain");
+
+// let isOn5 =
+// localStorage.getItem("rainEnabled")
+// === "true";
+
+// if(isOn5){
+
+//     rain.style.transform =
+//     "translateY(-50%) translateX(28px)";
+
+// }else{
+
+//     rain.style.transform =
+//     "translateY(-50%) translateX(0px)";
+// }
+
+// toggle5.addEventListener("click", function(){
+
+//     isOn5 = !isOn5;
+
+//     localStorage.setItem(
+//         "rainEnabled",
+//         isOn5
+//     );
+
+//     if(isOn5){
+
+//         rain.style.transform =
+//         "translateY(-50%) translateX(28px)";
+
+//     }else{
+
+//         rain.style.transform =
+//         "translateY(-50%) translateX(0px)";
+//     }
+
+// });
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
